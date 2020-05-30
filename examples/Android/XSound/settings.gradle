@@ -1,0 +1,3 @@
+rootProject.name='XSound'
+include ':app'
+include ':coresound'
