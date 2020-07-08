@@ -1,8 +1,8 @@
 //
 //  main.m
-//  XRender
+//  XSound
 //
-//  Created by Oogh on 2020/4/9.
+//  Created by Andy on 2020/7/6.
 //  Copyright © 2020 oogh. All rights reserved.
 //
 

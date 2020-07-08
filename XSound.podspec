@@ -19,7 +19,6 @@ Pod::Spec.new do |spec|
     
     coresound.public_header_files = "coresound/**/*.{h,hpp}", "coresound/iOS/**/*.{h,hpp}", "coresound/iOS/*.{h,hpp}"
     
-    coresound.frameworks = "GLKit"
     coresound.libraries = "c++"
   end
 end
