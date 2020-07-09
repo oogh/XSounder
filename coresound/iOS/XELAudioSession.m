@@ -66,7 +66,7 @@ const NSTimeInterval AUSAudioSessionLatency_LowLatency = 0.0058;
 
 - (void)addRouteChangedListener {
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(onNotificationAudioRouteChanged)
+                                             selector:@selector(onNotificationAudioRouteChanged:)
                                                  name:AVAudioSessionRouteChangeNotification
                                                object:nil];
     [self adjustOnRouteChange];
