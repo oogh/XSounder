@@ -39,6 +39,11 @@
         [_sounderDevice stop];
         _sounderDevice = nil;
     }
+    
+    if (_inputFile) {
+        fclose(_inputFile);
+        _inputFile = nil;
+    }
 }
 
 - (NSInteger)fillAudioData:(SInt16 *)samples frames:(NSInteger)frames channels:(NSInteger)channels {
