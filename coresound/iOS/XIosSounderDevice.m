@@ -99,8 +99,6 @@ fillAudioDataDelegate:(id<FillAudioDataDelegate>)fillAudioDataDelegate {
     
     status = AUGraphInitialize(_auGraph);
     checkStatus(status, @"[XIosSounderDevice] AUGraphInitialize failed!", YES);
-    
-    // TODO(oogh): 2020/07/09 从这里开始继续工作...
 }
 
 - (void)addAudioUnitNodes {
