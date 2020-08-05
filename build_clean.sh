@@ -1,4 +1,7 @@
 # andorid example clean
+PROJ_ANDROID=./examples/Android/XSound
+APP=$PROJ_ANDROID/app
+CORESOUND=$PROJ_ANDROID/coresound
 
 echo "[CLEAN] Begin!"
 

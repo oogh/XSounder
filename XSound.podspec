@@ -20,5 +20,8 @@ Pod::Spec.new do |spec|
     coresound.public_header_files = "coresound/**/*.{h,hpp}", "coresound/iOS/**/*.{h,hpp}", "coresound/iOS/*.{h,hpp}"
     
     coresound.libraries = "c++"
+    
+    coresound.frameworks = "OpenAL", "CoreMedia"
+    
   end
 end

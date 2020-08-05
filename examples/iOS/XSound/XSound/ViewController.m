@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 #import "XIosSounder.h"
+#import "XIosSounderAL.h"
 
 @interface ViewController () {
     XIosSounder* _sounder;
+    XIosSounderAL* _sounderAL;
 }
 @end
 
@@ -23,9 +25,11 @@
 
 - (IBAction)onOncePressClick:(UIButton *)sender {
     NSString* filename = [[NSBundle mainBundle] pathForResource:@"jieqian" ofType:@"pcm"];
-    _sounder = [[XIosSounder alloc] init];
-    [_sounder setInput:filename];
-    [_sounder start];
+//    _sounder = [[XIosSounder alloc] init];
+    _sounderAL = [[XIosSounderAL alloc] init];
+    
+    [_sounderAL setInput:filename];
+    [_sounderAL start];
 }
 
 @end

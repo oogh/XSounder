@@ -5,22 +5,25 @@
 #include "XSoundJNI.h"
 #include <string>
 #include <memory>
-#include "XAndroidSounder.h"
+#include "XAndroidSounderAL.h"
 
 static const std::string CLASS_NAME = "com/core/sound/XSounder";
 
 jlong sounderCreate(JNIEnv*, jobject) {
-    std::shared_ptr<XAndroidSounder>* sounder = new std::shared_ptr<XAndroidSounder>(new XAndroidSounder());
+//    std::shared_ptr<XAndroidSounder>* sounder = new std::shared_ptr<XAndroidSounder>(new XAndroidSounder());
+    std::shared_ptr<XAndroidSounderAL>* sounder = new std::shared_ptr<XAndroidSounderAL>(new XAndroidSounderAL());
     return reinterpret_cast<jlong>(sounder);
 }
 
 void sounderDestroy(JNIEnv*, jobject, jlong sounderPtr) {
-    std::shared_ptr<XAndroidSounder>* sounder = reinterpret_cast<std::shared_ptr<XAndroidSounder> *>(sounderPtr);
+//    std::shared_ptr<XAndroidSounder>* sounder = reinterpret_cast<std::shared_ptr<XAndroidSounder> *>(sounderPtr);
+    std::shared_ptr<XAndroidSounderAL>* sounder = reinterpret_cast<std::shared_ptr<XAndroidSounderAL> *>(sounderPtr);
     delete sounder;
 }
 
 void sounderSetInput(JNIEnv* env, jobject, jlong sounderPtr, jstring filename) {
-    auto sounder = reinterpret_cast<std::shared_ptr<XAndroidSounder> *>(sounderPtr);
+//    auto sounder = reinterpret_cast<std::shared_ptr<XAndroidSounder> *>(sounderPtr);
+    auto sounder = reinterpret_cast<std::shared_ptr<XAndroidSounderAL> *>(sounderPtr);
     jboolean copy;
     const char* path = env->GetStringUTFChars(filename, &copy);
     (*sounder)->setInput(path);
@@ -28,7 +31,8 @@ void sounderSetInput(JNIEnv* env, jobject, jlong sounderPtr, jstring filename) {
 }
 
 void sounderStart(JNIEnv*, jobject, jlong sounderPtr) {
-    auto sounder = reinterpret_cast<std::shared_ptr<XAndroidSounder> *>(sounderPtr);
+//    auto sounder = reinterpret_cast<std::shared_ptr<XAndroidSounder> *>(sounderPtr);
+    auto sounder = reinterpret_cast<std::shared_ptr<XAndroidSounderAL> *>(sounderPtr);
     (*sounder)->start();
 }
 

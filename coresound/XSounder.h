@@ -21,7 +21,7 @@ public:
 
     virtual void setInput(const std::string& filename);
 
-public:
+protected:
     std::string mFilename;
 
 };
